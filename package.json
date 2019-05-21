@@ -1,0 +1,25 @@
+{
+  "name": "newEveryStop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrentWalker/newEveryStop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrentWalker/newEveryStop/issues"
+  },
+  "homepage": "https://github.com/BrentWalker/newEveryStop#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "mongoose": "^5.5.10"
+  }
+}
