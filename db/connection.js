@@ -16,4 +16,4 @@ mongoose.connection.once('open', () => {
     console.log("Mongoose has connected to MongoDB")
 })
 
-module.exports = mongooseeree
+module.exports = mongoose
