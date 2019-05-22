@@ -26,7 +26,7 @@ if (process.env.MONGODB_URI) {
     useNewUrlParser: true
   });
 } else {
-  mongoose.connect("mongodb://localhost/load-builder", {
+  mongoose.connect("mongodb://localhost/newEveryStop", {
     useNewUrlParser: true
   });
 }
