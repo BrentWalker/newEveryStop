@@ -26,7 +26,7 @@ if (process.env.MONGODB_URI) {
     useNewUrlParser: true
   });
 } else {
-  mongoose.connect("mongodb://localhost/newEveryStop", {
+  mongoose.connect("mongodb://localhost/neweverystop", {
     useNewUrlParser: true
   });
 }
