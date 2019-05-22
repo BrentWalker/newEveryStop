@@ -10,7 +10,7 @@ The EveryStop LoadBuilder App is a full stack MERN application, the Loadbuilder 
 
 
 
-the technologies used in creating this app include Javascript, Node MongoDB Express & React, also CSS & Html, axios, postman were used also
+the technologies used in creating this app include Javascript, Node, MongoDB, Express & React, also CSS & Html, axios, postman were used also.
 .
 
 
