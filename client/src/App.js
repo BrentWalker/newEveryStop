@@ -27,7 +27,7 @@ class App extends Component {
                   <Link to="/createContact" className="nav-link">Create Contact</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/contacts" className="nav-link">Contacts</Link>
+                  <Link to="/contacts" className="nav-link">Contacts </Link>
                 </li>
               </ul>
             </div>
