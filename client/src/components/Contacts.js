@@ -18,7 +18,7 @@ class Loads extends Component {
         },
         isLoadFormDisplayed: false
     }
-    componentDidMount = () => {
-        axios.get
-    }
+    // componentDidMount = () => {
+    //     axios.get
+    // }
 }

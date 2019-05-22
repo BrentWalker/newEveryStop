@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.use(express.json());
 app.get('/', (req,res) => {
-  res.send('Hello world!')
+  res.send('Hello yo world!')
 })
 
 const PORT = process.env.PORT || 3000;
