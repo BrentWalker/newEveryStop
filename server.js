@@ -6,6 +6,15 @@ const mongoose = require("mongoose");
 const routes = express.Router();
 const PORT = process.env.PORT || 4000;
 
+
+app.use(express.static(__dirname + '/client/build/'));
+
+app.get('/', (req,res) => {
+  res.sendFile(__dirname + '/client/build/index.html')
+})
+
+
+
 let Load = require("./models/load.model.js");
 // let Contact = require("./models/contact.model.js");
 
