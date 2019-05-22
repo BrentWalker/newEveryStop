@@ -32,10 +32,10 @@ class ContactBox extends Component {
             <span onClick={() => this.props.onUpdate(this.state)}>Update</span>
             <span onClick={this.props.onCancel}>Cancel</span>
             {/* <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_number}</span> */}
-            <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_contact_name: e.target.value})} value={this.state.contact_contact_name} /></span>
+            <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_contact_name: e.target.value})} value={this.state.contact_name} /></span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_address: e.target.value})} value={this.state.contact_address} /></span>
-            <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_tractor_number: e.target.value})} value={this.state.contact_tractor_number} /></span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_phone: e.target.value})} value={this.state.contact_phone} /></span>
+            {/* <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_phone: e.target.value})} value={this.state.contact_phone} /></span> */}
             {/* <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_pu_date: e.target.value})} value={this.state.contact_pu_date} /></span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_del_date: e.target.value})} value={this.state.contact_del_date} /></span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}><input onChange={e => this.setState({contact_pu_location: e.target.value})} value={this.state.contact_pu_location} /></span>
@@ -48,7 +48,7 @@ class ContactBox extends Component {
             <span onClick={this.editContact}>Edit</span>
             <span onClick={() => this.props.onDelete(this.props.contact)}>Delete</span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_number}</span>
-            <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_contact_name}</span>
+            <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_name}</span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_address}</span>
             {/* <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_tractor_number}</span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_phone}</span>

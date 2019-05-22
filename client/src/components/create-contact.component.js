@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 export default class CreateContact extends Component {
   constructor(props) {
     super(props);
@@ -39,12 +40,36 @@ export default class CreateContact extends Component {
     console.log(`Contact Phone; ${this.state.contact_phone}`);
     console.log(`Contact Completed: ${this.state.contact_completed}`);
 
-    this.setState({
-      contact_name: "",
-      contact_address: "",
-      contact_phone: "",
-      contact_completed: false
-    });
+    const newContact = {
+      contact_name: this.state.contact_name,
+      contact_address: this.state.contact_address,
+      contact_phone: this.state.contact_phone,
+      contact_completed: this.state.contact_completed
+    };
+
+    // let result;
+
+    axios
+      .post("http://localhost:4000/contacts/add", newContact)
+      .then(res => {
+        this.setState({
+            complete: true,
+            contact_name: "",
+            contact_address: "",
+            contact_phone: "",
+            contact_completed: false
+          },() => console.log(res.data));
+      })
+      .catch(err => {
+        this.setState({
+          complete: false,
+          contact_name: "",
+          contact_address: "",
+          contact_phone: "",
+
+          contact_completed: false
+        });
+      });
   }
 
   render() {
@@ -73,7 +98,7 @@ export default class CreateContact extends Component {
           <div className="form-group">
             <label>Shipper Phone</label>
             <input
-              type="tel"
+              type="text"
               className="form-control"
               value={this.state.contact_phone}
               onChange={this.onChangeContactPhone}
