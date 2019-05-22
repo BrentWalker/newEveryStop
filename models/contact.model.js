@@ -13,5 +13,5 @@ let Contact = new Schema({
     },
 });
 
-module.exports = mongoose.model("Load", Load);
+module.exports = mongoose.model("Contact", Contact);
 

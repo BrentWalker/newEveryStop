@@ -16,7 +16,7 @@ app.get('/', (req,res) => {
 
 
 let Load = require("./models/load.model.js");
-// let Contact = require("./models/contact.model.js");
+let Contact = require("./models/contact.model.js");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -111,7 +111,7 @@ routes.route("/loads/delete/:id").delete(function(req, res) {
 });
 
 routes.route("/contacts").get(function(req, res) {
-  contact.find(function(err, contacts) {
+  Contact.find(function(err, contacts) {
     if (err) {
       console.log(err);
     } else {
@@ -122,7 +122,7 @@ routes.route("/contacts").get(function(req, res) {
 
 routes.route("/contacts/:id").get(function(req, res) {
   let id = req.params.id;
-  contact.findById(id, function(err, contact) {
+  Contact.findById(id, function(err, contact) {
     res.json(contact);
   });
 });
@@ -140,7 +140,7 @@ routes.route("/contacts/add").post(function(req, res) {
 });
 
 routes.route("/contacts/update/:id").post(function(req, res) {
-  contact.findById(req.params.id, function(err, contact) {
+  Contact.findById(req.params.id, function(err, contact) {
     if (!contact) {
       res.status(404).send("data is not found");
     } else {
