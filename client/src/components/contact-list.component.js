@@ -28,7 +28,7 @@ class ContactBox extends Component {
     render() {
       if (this.props.editing) {
         return <React.Fragment>
-          <div>
+          <div className="table table-striped table-dark" style={{ marginTop: 10 }}>
             <span onClick={() => this.props.onUpdate(this.state)}>Update</span>
             <span onClick={this.props.onCancel}>Cancel</span>
             {/* <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_number}</span> */}
@@ -44,7 +44,7 @@ class ContactBox extends Component {
         </React.Fragment>
       } else {
         return <React.Fragment>
-          <div>
+          <div className="table table-striped table-dark" style={{ marginTop: 10 }}>
             <span onClick={this.editContact}>Edit</span>
             <span onClick={() => this.props.onDelete(this.props.contact)}>Delete</span>
             <span className={this.props.contact.contact_completed ? 'completed' : ""}>{this.props.contact.contact_number}</span>

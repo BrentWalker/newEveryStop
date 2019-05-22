@@ -88,7 +88,7 @@ class Load extends Component {
 
   render() {
     return <React.Fragment>
-      <tr>
+      <tr >
         <td className={this.props.load.load_completed ? 'completed' : ""}>{this.props.load.load_number}</td>
         <td className={this.props.load.load_completed ? 'completed' : ""}>{this.props.load.load_driver_name}</td>
         <td className={this.props.load.load_completed ? 'completed' : ""}>{this.props.load.load_del_location}</td>
