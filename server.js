@@ -12,10 +12,10 @@ let Load = require("./models/load.model.js");
 app.use(cors());
 app.use(bodyParser.json());
 
-if(process.env.MONGODB_URI) {
+if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
-  })
+  });
 } else {
   mongoose.connect("mongodb://localhost/load-builder", {
     useNewUrlParser: true
@@ -24,9 +24,9 @@ if(process.env.MONGODB_URI) {
 
 const connection = mongoose.connection;
 
-connection.on('error', (err) => {
-  console.error('MongoDB connection error: ', err);
-  process.exit(-1)
+connection.on("error", err => {
+  console.error("MongoDB connection error: ", err);
+  process.exit(-1);
 });
 
 connection.once("open", function() {
@@ -64,8 +64,9 @@ routes.route("/loads/add").post(function(req, res) {
 
 routes.route("/loads/update/:id").post(function(req, res) {
   Load.findById(req.params.id, function(err, load) {
-    if (!load) {res.status(404).send("data is not found");}
-    else {
+    if (!load) {
+      res.status(404).send("data is not found");
+    } else {
       load.load_number = req.body.load_number;
       load.load_driver_name = req.body.load_driver_name;
       load.load_rate = req.body.load_rate;
@@ -85,16 +86,78 @@ routes.route("/loads/update/:id").post(function(req, res) {
         .catch(err => {
           res.status(400).send("Update Not Done yo!!");
         });
-      }
+    }
   });
 });
 
 routes.route("/loads/delete/:id").delete(function(req, res) {
   let id = req.params.id;
   Load.findByIdAndRemove(id, function(err, load) {
-    if (!load) {res.status(404).send("data is not found");}
-    else {
+    if (!load) {
+      res.status(404).send("data is not found");
+    } else {
       res.status(200).json(load);
+    }
+  });
+});
+
+routes.route("/contacts").get(function(req, res) {
+  contact.find(function(err, contacts) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(contacts);
+    }
+  });
+});
+
+routes.route("/contacts/:id").get(function(req, res) {
+  let id = req.params.id;
+  contact.findById(id, function(err, contact) {
+    res.json(contact);
+  });
+});
+
+routes.route("/contacts/add").post(function(req, res) {
+  let contact = new Contact(req.body);
+  contact
+    .save()
+    .then(data => {
+      res.status(200).json(data);
+    })
+    .catch(err => {
+      res.status(400).send("adding new contact failed");
+    });
+});
+
+routes.route("/contacts/update/:id").post(function(req, res) {
+  contact.findById(req.params.id, function(err, contact) {
+    if (!contact) {
+      res.status(404).send("data is not found");
+    } else {
+      contact.contact_name = req.body.contact_name;
+      contact.contact_address = req.body.contact_address;
+      contact.contact_phone = req.body.contact_phone;
+
+      contact
+        .save()
+        .then(contact => {
+          res.json(contact);
+        })
+        .catch(err => {
+          res.status(400).send("Update Not Done yo!!");
+        });
+    }
+  });
+});
+
+routes.route("/contacts/delete/:id").delete(function(req, res) {
+  let id = req.params.id;
+  Contact.findByIdAndRemove(id, function(err, contact) {
+    if (!contact) {
+      res.status(404).send("data is not found");
+    } else {
+      res.status(200).json(contact);
     }
   });
 });

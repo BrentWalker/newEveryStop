@@ -178,15 +178,15 @@ class ContactBox extends Component {
     }
   
     render() {
-      const contactList = this.state.contacts.map( (currentcontact, i) => (
+      const contactList = this.state.contacts.map( (currentContact, i) => (
         <Contact
-          // editing={this.state.editable === currentcontact.contact_name}
+          // editing={this.state.editable === currentContact.contact_name}
           onDelete={this.onDelete}
           onEdit={this.onEdit}
           onUpdate={this.onUpdate}
           onCancel={this.onCancel}
           onShow={this.onShow}
-          contact={currentcontact}
+          contact={currentContact}
           key={i} />
       ));
   
@@ -198,15 +198,15 @@ class ContactBox extends Component {
               <table className="table table-striped table-dark" style={{ marginTop: 10 }}>
                 <thead>
                   <tr>
-                      <th>Contact Number</th>
-                      <th>Driver Name</th>
-                      {/*<th>Rate</th>*/}
+                      <th>Contact Name</th>
+                      <th>Contact Address</th>
+                      <th>Phone</th>
                       {/*<th>Tractor Number</th>*/}
                       {/*<th>Trailer Number</th>*/}
                       {/*<th>Pickup Date</th>*/}
                       {/*<th>Delivary Date</th>*/}
                       {/*<th>Pickup Location</th>*/}
-                      <th>Delivary Location</th>
+                      {/* <th>Delivary Location</th> */}
                       {/*<th>Actions</th>*/}
                   </tr>
                 </thead>
