@@ -1,6 +1,6 @@
 # newEveryStop
 
-Every Stop Deployed https://dashboard.heroku.com/apps/neweverystop
+Every Stop Deployed https://neweverystop.herokuapp.com/
 trello board https://trello.com/b/JlsY0LmR/load-builder
 git hub https://github.com/BrentWalker/newEveryStop
 
